@@ -1,0 +1,18 @@
+/*
+    Created By: Alex Powers
+    Website: http://www.itsnotaboutthecell.com
+    LinkedIn: https://www.linkedin.com/in/alexmpowers/
+    Contact: alexmpowers@itsnotaboutthecell.com
+*/
+
+let
+    Source = #table(
+            type table [CustomerID = Int64.Type, CustomerName = text, CustomerCity = text, CustomerState = text],
+            {
+                {1, "Bob Smith", "Rockford", "IL"},
+                {2, "Randy Savage", "St Louis", "MO"},
+                {3, "Lucy Davis", "Lansing", "MI"}
+            }
+    )
+in
+    Source
