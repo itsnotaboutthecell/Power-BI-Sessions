@@ -16,7 +16,7 @@ let
                         Table = table,
                         Function = function,
                         Type = type
-                        ],
+                    ],
                 {
                     {
                         "Hello, World!", // Text
@@ -34,7 +34,7 @@ let
                         #table({"ID"},{{1}}), // table
                         let foobar = (param) as any => foobar = param in foobar, // Function
                         Value.Type(2)  // Type
-                }
+                    }
                 }
         ),
     #"Transposed Table" = Table.Transpose(Source, {"Values"}),
