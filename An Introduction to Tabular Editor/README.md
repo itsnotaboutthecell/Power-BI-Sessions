@@ -25,14 +25,15 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 [Learn More](https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo)
 
 ## Instructions
-1. With the Sales Demo (PBIX) file open, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
-2. On your local machine create a folder titled: **Sales Demo**
-3. Within Tabular Editor 
+1. Ensure the Power BI preview feature [Store datasests using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+2. With the Sales Demo (PBIX) file open, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
+3. On your local machine create a folder titled: **Sales Demo**
+4. Within Tabular Editor 
     1. Navigate to **File > Save to Folder...** and select the above **Sales Demo** that was created.
     2. Navigate to the **Sales Demo** folder and review the outputs in comparison with the TOM hierarchy above.
-4. To view the full solution navigate to **File > Save As..** and save the output **model.bim** (bim: business intelligence model), to your local machine to review.
+5. To view the full solution navigate to **File > Save As..** and save the output **model.bim** (bim: business intelligence model), to your local machine to review.
 
-**Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. Please note to deploy changes directly to datasets within the Power BI service this requires the XMLA read/write endpoint which is a Premium feature.
+**Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required.
 
 [Learn More About Data Modeling and Management Tools](https://docs.microsoft.com/en-us/power-bi/admin/service-premium-connect-tools#data-modeling-and-management-tools) 
 ___
@@ -74,9 +75,11 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     1. Confirm that the fields hidden are now visible.
     2. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**)
     3. Select the header **Hide foreign key columns (11 objects)**
-    4. Press the Apply fix icon to instantly apply fixes.
+    4. Press the **Apply fix** icon to instantly apply fixes.
     ![Generate Fix](./Images/generate_fix_script.png)
     5. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+
+**Important Note:** Changes to the model can be both read from and written to the Power BI dataset. Any changes within Tabular Editor will need to be saved back to the connected database.
 
 ___
 
@@ -84,7 +87,9 @@ ___
 
 ___
 
-# Creating 
+# Calculation Groups
+
+___
 
 # Optional Content
 
