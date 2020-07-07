@@ -55,8 +55,28 @@ Website: https://github.com/TabularEditor/BestPracticeRules
         1. Press **Add..**
         2. Select **Include Rule File from URL** and press **OK**
         3. Paste the above BPARules-standard.json web address and press **OK**
-5. Within Tabular Editor navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**)
-6. 
+5. Within Tabular Editor:
+    1. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**)
+    2. Review the current list of objects needing attention based on the rules.
+    3. Select the header **Hide foreign key columns (11 objects)**
+    4. Press the **Generate fix script** icon to copy to the clipboard.
+    ![Generate Fix](./Images/generate_fix_script.png)
+    5. In the **Fix script generation** dialog box prompt press **OK**.
+6. Within Tabular Editor:
+    1. Select the **Advanced Scripting** tab and paste the generated script (**Ctrl+V**) or from the navigation menu (**Edit > Paste**)
+    2. Press the **Run script (selection only) F5** button. ▶
+    3. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+    ![Advanced Scripting and Save](./Images/advanced_scripting_and_save.png)
+7. Within Power BI Desktop
+    1. Review the **Orders** table to confirm that all the applicable columns (CustomerID, SalesPersonID, Order Date and Expected Delivery Date) are now hidden.
+    2. Right click any field and select **Unhide All**
+8. Within Tabular Editor:
+    1. Confirm that the fields hidden are now visible.
+    2. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**)
+    3. Select the header **Hide foreign key columns (11 objects)**
+    4. Press the Apply fix icon to instantly apply fixes.
+    ![Generate Fix](./Images/generate_fix_script.png)
+    5. Press the **Saves the changes to the connected database (Ctrl+S) button.**
 
 ___
 
