@@ -25,7 +25,7 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 [Learn More](https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo)
 
 ## Instructions
-1. Ensure the Power BI preview feature [Store datasests using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
 2. With the Sales Demo (PBIX) file open, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
 3. On your local machine create a folder titled: **Sales Demo**
 4. Within Tabular Editor 
