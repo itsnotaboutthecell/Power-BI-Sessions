@@ -41,7 +41,7 @@ ___
 # Best Practices Analyzer
 
 ### About:
-The best practices rules are a collection of community contributions for Tabular Modeling.
+The best practices rules are a collection of community contributions for Tabular Model development. They let you define global or model-specific rules using a simple expression language. At any time, you can check whether objects in your model satisfy the rules.
 
 Website: https://github.com/TabularEditor/BestPracticeRules
 
@@ -84,9 +84,74 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 
 ___
 
-# Automated Scripting
+# Advanced Scripting (Automation)
 
+Advanced Scripting, lets users write a script, to more directly manipulate the objects in the loaded Tabular Model, that can be saved as Custom Actions for easy invocation directly in the Explorer Tree.
 
+Website: https://github.com/otykier/TabularEditor/wiki/Advanced-Scripting
+
+Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
+
+**Important Note:** 
+- You can use CTRL+Z to undo or CTRL+Y to redo changes.
+- The scripting language is C#
+
+## Instructions
+
+1. Select the **Advanced Scripting** tab and enter the below script
+```
+Selected.Table.AddMeasure( 
+    "Total Count of " + Selected.Table.Name,
+    "COUNTROWS('" + Selected.Table.Name + "')",
+    "Measurements" 
+);
+```
+**Best Practice:** Utilize a single quote in the event of a table name containing a space for the expression.
+
+2. Select the **Orders** table and then press the **Run script (selection only) F5** button. ▶
+3. Within the Model Explorer navigate to the **Orders** table, the **Measurements** folder and select the **Total Count of Orders** measure.
+4. Review the following arguments from the script earlier in comparison with the Property Pages
+```
+Selected.Table.AddMeasure( 
+    Argument1 // Name ,
+    Argument2 // Expression ,
+    Argument3 // Display Folder
+);
+```
+![Property Pages](./Images/property_pages.png)
+
+5. Press **CTRL+Z** to undo actions until the folder and measure have been removed from the **Orders** table.
+6. Within the **Advanced Scripting** tab update the script to include a variable
+```
+var tableName = Selected.Table.Name;
+
+Selected.Table.AddMeasure(
+    "Total Count of " + tableName,
+    "COUNTROWS('" + tableName + "')",
+    "Measurements"
+);
+```
+7. Select the **Orders** table and then press the **Run script (selection only) F5** button. ▶
+8. Confirm within the Model Explorer in the the **Orders** table and the **Measurements** folder the the **Total Count of Orders** measure exists.
+9. Select the **Customers** and **Employees** table and press the **Run script (selection only) F5** button. ▶
+10. An error will now be displayed stating **The selection contains more than one object of type Table** indicating only one active object can be selected.
+11. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
+![All Selected Tables](./Images/all_selected_tables.png)
+12. Update the script to include the below
+
+```
+foreach(var table in Selected.Tables) {
+   
+    var tableName = table.Name;
+   
+    table.AddMeasure(
+        "Total Count of " + tableName,
+        "COUNTROWS('" + tableName + "')",
+        "Measurements"
+    );
+    
+};
+```
 ___
 
 # Calculation Groups
