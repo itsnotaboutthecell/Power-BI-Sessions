@@ -72,22 +72,25 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     1. Review the **Orders** table to confirm that all the applicable columns (CustomerID, SalesPersonID, Order Date and Expected Delivery Date) are now hidden.
     2. Right click any field and select **Unhide All**
 8. Within Tabular Editor:
+    1. In the **External change detected** dialog box press **Yes**
     1. Confirm that the fields hidden are now visible.
     2. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**)
     3. Select the header **Hide foreign key columns (11 objects)**
     4. Press the **Apply fix** icon to instantly apply fixes.
-    ![Generate Fix](./Images/generate_fix_script.png)
+    ![Apply Fix](./Images/apply_fix.png)
     5. Press the **Saves the changes to the connected database (Ctrl+S) button.**
 
 **Important Note:** Changes to the model can be both read from and written to the Power BI dataset. Any changes within Tabular Editor will need to be saved back to the connected database.
 
 ___
 
-# Scripting
+# Automated Scripting
+
 
 ___
 
 # Calculation Groups
+
 
 ___
 
