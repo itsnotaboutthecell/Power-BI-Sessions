@@ -90,7 +90,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
         1. Select from the Rule collections: **Rules on the local machine**
-        2. Press **New rule...** and insert the following values from the hash table below. [Completed Dialog Box](./Images/disable_autotime.png)
+        2. Press **New rule...** and insert the following values from the hash table below. [Completed Dialog Box](./Images/disable_auto_datetime.png)
         3. Once completed press **OK** to save.
         4. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**) to view the newly created rule.
 
