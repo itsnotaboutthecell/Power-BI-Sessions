@@ -45,6 +45,9 @@ The best practices rules are a collection of community contributions for Tabular
 
 Website: https://github.com/TabularEditor/BestPracticeRules
 
+
+### Objective: Import the Best Practices Rules collection and apply to the model.
+
 ## Instructions
 1. Navigate to the repository, https://github.com/TabularEditor/BestPracticeRules
 2. Navigate to the [BPARules-standard.json](https://github.com/TabularEditor/BestPracticeRules/blob/master/BPARules-standard.json) file and press the Raw button.
@@ -80,6 +83,9 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     4. Press the **Apply fix** icon to instantly apply fixes.
     ![Apply Fix](./Images/apply_fix.png)
     5. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+    
+### Objective: Create a new rule that can be utilized within the Best Practices Rules.
+    
 9. Within Tabular Editor:
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
@@ -100,6 +106,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 | Minimum Compatability Level | CL 1200 (SQL Server 2016 / Azure AS) |
 
 **Important Note:** Changes to the model can be both read from and written to the Power BI dataset. Any changes within Tabular Editor will need to be saved back to the connected database.
+
 
 ___
 
