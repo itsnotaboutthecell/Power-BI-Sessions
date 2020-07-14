@@ -24,6 +24,8 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 
 [Learn More](https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo)
 
+### Objective: Extract the underlying metadata from the model.
+
 ## Instructions
 1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
 2. With the Sales Demo (PBIX) file open, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
@@ -122,6 +124,8 @@ Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
 - You can use CTRL+Z to undo or CTRL+Y to redo changes.
 - The scripting language is C#
 
+### Objective: Create a script to automate the addition of measures in the model.
+
 ## Instructions
 
 1. Select the **Advanced Scripting** tab and enter the below script
@@ -178,6 +182,8 @@ foreach(var table in Selected.Tables) {
     
 };
 ```
+13. Select the **Orders**, **Customers**, **Employeees** and **Customer Transactions** tables and then press the **Run script (selection only) F5** button. ▶
+14. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
 ___
 
 # Calculation Groups
