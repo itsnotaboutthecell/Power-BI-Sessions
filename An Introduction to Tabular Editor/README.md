@@ -101,8 +101,8 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 | Severity | 1 |
 | Category | Performance |
 | Description | Navigate to the Power BI Desktop's Current File properties and disable the setting Auto date/time in Data Load. Note: To disable for all new files created in Power BI Desktop disable the setting Auto date/time for new files in the Global settings Data Load. |
-| Applies to | Partitions |
-| Rule Expression Editor | Table.Name.StartsWith("LocalDateTable_") |
+| Applies to | Tables |
+| Rule Expression Editor | Tables.Any(Name.StartsWith("LocalDateTable_")) |
 | Minimum Compatability Level | CL 1200 (SQL Server 2016 / Azure AS) |
 
 **Important Note:** Changes to the model can be both read from and written to the Power BI dataset. Any changes within Tabular Editor will need to be saved back to the connected database.
