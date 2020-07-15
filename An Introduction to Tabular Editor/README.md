@@ -77,28 +77,28 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     1. Copy the web address in your browser (must match the below with the prefix raw) - 
     
     ``https://raw.githubusercontent.com/TabularEditor/BestPracticeRules/master/BPARules-standard.json``
-4. Within Tabular Editor:
+3. Within Tabular Editor:
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
         1. Press **Add..**
         2. Select **Include Rule File from URL** and press **OK**
         3. Paste the above BPARules-standard.json web address and press **OK**
-5. Within Tabular Editor:
+4. Within Tabular Editor:
     1. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**)
     2. Review the current list of objects needing attention based on the rules.
     3. Select the header **Hide foreign key columns (11 objects)**
     4. Press the **Generate fix script** icon to copy to the clipboard.
     ![Generate Fix](./Images/generate_fix_script.png)
     5. In the **Fix script generation** dialog box prompt press **OK**.
-6. Within Tabular Editor:
+5. Within Tabular Editor:
     1. Select the **Advanced Scripting** tab and paste the generated script (**Ctrl+V**) or from the navigation menu (**Edit > Paste**)
     2. Press the **Run script (selection only) F5** button. ▶
     3. Press the **Saves the changes to the connected database (Ctrl+S) button.**
     ![Advanced Scripting and Save](./Images/advanced_scripting_and_save.png)
-7. Within Power BI Desktop
+6. Within Power BI Desktop
     1. Review the **Orders** table to confirm that all the applicable columns (CustomerID, SalesPersonID, Order Date and Expected Delivery Date) are now hidden.
     2. Right click any field and select **Unhide All**
-8. Within Tabular Editor:
+7. Within Tabular Editor:
     1. In the **External change detected** dialog box press **Yes**
     1. Confirm that the fields hidden are now visible.
     2. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**)
@@ -109,13 +109,12 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     
 ### Objective: Create a new rule that can be utilized within the Best Practices Rules.
     
-9. Within Tabular Editor:
+1. Within Tabular Editor:
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
         1. Select from the Rule collections: **Rules on the local machine**
         2. Press **New rule...** and insert the following values from the hash table below. [Completed Dialog Box](./Images/disable_auto_datetime.png)
         3. Once completed press **OK** to save.
-        4. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**) to view the newly created rule.
 
 | Key | Value |
 | :--- | :----- |
@@ -127,6 +126,8 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 | Applies to | Tables |
 | Rule Expression Editor | Tables.Any(Name.StartsWith("LocalDateTable_")) |
 | Minimum Compatability Level | CL 1200 (SQL Server 2016 / Azure AS) |
+
+2. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**) to view the newly created rule.
 
 **Important Note:** Changes to the model can be both read from and written to the Power BI dataset. Any changes within Tabular Editor will need to be saved back to the connected database.
 ___
