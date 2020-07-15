@@ -13,18 +13,26 @@ ___
 ___
 
 # Table of Contents
-- [Tabluar Editor Preferences](#tabular-editor-preferences)
+- [Setup](#setup)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
 - [Best Practices Analyzer](#best-practices-analyzer)
 - [Advanced Scripting](#advanced-scripting-automation)
     - [Tables](#tables)
     - [Columns](#columns)
+- [Continue Your Journey](#continue-your-journey)
     
 ___
 
-# Tabular Editor Preferences
+# Setup
 
-## Instructions
+## Power BI Desktop
+
+### Instructions
+1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+
+## Tabular Editor Preferences
+
+### Instructions
 1. Navigate to the **File** menu and select **Preferences**
 2. Enable the settings:
     1. **Detect changes on local AS instance (experimental)**
@@ -48,13 +56,12 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 ### Objective: Extract the underlying metadata from the model.
 
 ## Instructions
-1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
-2. With the Sales Demo (PBIX) file open, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
-3. On your local machine create a folder titled: **Sales Demo**
-4. Within Tabular Editor 
+1. Open the Sales Demo (PBIX) file, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
+2. On your local machine create a folder titled: **Sales Demo**
+3. Within Tabular Editor 
     1. Navigate to **File > Save to Folder...** and select the above **Sales Demo** that was created.
     2. Navigate to the **Sales Demo** folder and review the outputs in comparison with the TOM hierarchy above.
-5. To view the full solution navigate to **File > Save As..** and save the output **model.bim** (bim: business intelligence model), to your local machine to review.
+4. To view the full solution navigate to **File > Save As..** and save the output **model.bim** (bim: business intelligence model), to your local machine to review.
 
 **Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required.
 
@@ -79,7 +86,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     ``https://raw.githubusercontent.com/TabularEditor/BestPracticeRules/master/BPARules-standard.json``
 3. Within Tabular Editor:
     1. Navigate to **Tools** and select **Manage BPA Rules...**
-    2. Within the Manage Best Practice Rules dialog
+    2. Within the Manage Best Practice Rules dialog:
         1. Press **Add..**
         2. Select **Include Rule File from URL** and press **OK**
         3. Paste the above BPARules-standard.json web address and press **OK**
@@ -95,7 +102,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     2. Press the **Run script (selection only) F5** button. ▶
     3. Press the **Saves the changes to the connected database (Ctrl+S) button.**
     ![Advanced Scripting and Save](./Images/advanced_scripting_and_save.png)
-6. Within Power BI Desktop
+6. Within Power BI Desktop:
     1. Review the **Orders** table to confirm that all the applicable columns (CustomerID, SalesPersonID, Order Date and Expected Delivery Date) are now hidden.
     2. Right click any field and select **Unhide All**
 7. Within Tabular Editor:
@@ -108,7 +115,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     5. Press the **Saves the changes to the connected database (Ctrl+S) button.**
     
 ### Objective: Create a new rule that can be utilized within the Best Practices Rules.
-    
+
 1. Within Tabular Editor:
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
@@ -257,8 +264,14 @@ foreach(var c in Selected.Columns) {
 
 ___
 
-# Optional Content
+# Continue Your Journey
 
-## Creating Partitions (Power BI Premium)
+### An indepth walk through of Tabular Editor
+[PowerBI.Tips - Tabular Editor Playlist](https://www.youtube.com/watch?v=c-jZMzsvKnM&list=PLZjKz7bVsqV1mmA48wXqrSDPbDSGBvLdL)
 
+### Calculation Groups
+[SQLBI - Creating calculation groups in Power BI Desktop using Tabular Editor](https://www.youtube.com/watch?v=a4zYT-N-zsU)
+[SQLBI - Calculation Groups (Blog)](https://www.sqlbi.com/calculation-groups/)
+
+### Creating Partitions (Power BI Premium)
 [Process Database, Table or Partition](https://docs.microsoft.com/en-us/analysis-services/tabular-models/process-database-table-or-partition-analysis-services)
