@@ -10,8 +10,19 @@ ___
 **Follow Along:**
 - [Download and Install Tabular Editor](https://github.com/otykier/TabularEditor/releases)
 - [Download and open the Sales Demo PBIX File](https://github.com/itsnotaboutthecell/Power-BI-Sessions/raw/master/An%20Introduction%20to%20Tabular%20Editor/Sales%20Demo.pbix)
-
 ___
+
+# Tabular Editor Preferences
+
+## Instructions
+1. Navigate to the **File** menu and select **Preferences**
+2. Enable the settings:
+    1. **Detect changes on local AS instance (experimental)**
+    2. [Optional] Allow unsupported Power BI features (experimental)
+
+![Tabular Editor Preferences](./Images/tabular_editor_preferences.png)
+
+**Important Note:** Always create a backup of your PBIX file prior to editing to avoid any issues in the event of a corrupted model.
 
 # Tabular Object Model Hierarchy
 **Source:** Microsoft Docs
@@ -108,8 +119,6 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 | Minimum Compatability Level | CL 1200 (SQL Server 2016 / Azure AS) |
 
 **Important Note:** Changes to the model can be both read from and written to the Power BI dataset. Any changes within Tabular Editor will need to be saved back to the connected database.
-
-
 ___
 
 # Advanced Scripting (Automation)
@@ -128,6 +137,8 @@ Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
 
 ## Instructions
 
+### Tables
+
 1. Select the **Advanced Scripting** tab and enter the below script
 ```
 Selected.Table.AddMeasure( 
@@ -144,14 +155,15 @@ Selected.Table.AddMeasure(
 ```
 Selected.Table.AddMeasure( 
     Argument1 // Name ,
-    Argument2 // Expression ,
+    Argument2 // DAX expression ,
     Argument3 // Display Folder
 );
 ```
 ![Property Pages](./Images/property_pages.png)
 
-5. Press **CTRL+Z** to undo actions until the folder and measure have been removed from the **Orders** table.
-6. Within the **Advanced Scripting** tab update the script to include a variable
+5. 
+6. Press **CTRL+Z** to undo actions until the folder and measure have been removed from the **Orders** table.
+7. Within the **Advanced Scripting** tab update the script to include a variable
 ```
 var tableName = Selected.Table.Name;
 
@@ -161,13 +173,13 @@ Selected.Table.AddMeasure(
     "Measurements"
 );
 ```
-7. Select the **Orders** table and then press the **Run script (selection only) F5** button. ▶
-8. Confirm within the Model Explorer in the the **Orders** table and the **Measurements** folder the the **Total Count of Orders** measure exists.
-9. Select the **Customers** and **Employees** table and press the **Run script (selection only) F5** button. ▶
-10. An error will now be displayed stating **The selection contains more than one object of type Table** indicating only one active object can be selected.
-11. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
+8. Select the **Orders** table and then press the **Run script (selection only) F5** button. ▶
+9. Confirm within the Model Explorer in the the **Orders** table and the **Measurements** folder the the **Total Count of Orders** measure exists.
+10. Select the **Customers** and **Employees** table and press the **Run script (selection only) F5** button. ▶
+11. An error will now be displayed stating **The selection contains more than one object of type Table** indicating only one active object can be selected.
+12. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
 ![All Selected Tables](./Images/all_selected_tables.png)
-12. Update the script to include the below
+13. Update the script to include the below:
 
 ```
 foreach(var table in Selected.Tables) {
@@ -183,10 +195,53 @@ foreach(var table in Selected.Tables) {
 };
 ```
 13. Select the **Orders**, **Customers**, **Employeees** and **Customer Transactions** tables and then press the **Run script (selection only) F5** button. ▶
-14. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
-___
 
-# Calculation Groups
+### Columns
+
+14. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected columns**
+15. Update the script to include the below:
+```
+foreach(var c in Selected.Columns) {
+
+    c.Table.AddMeasure(
+        "Sum of " + c.Name,
+        "SUM(" + c.DaxObjectFullName + ")",
+        "Measurements"
+    );
+
+}
+```
+**Important Note:** The DaxObjectFullName property provides the fully qualified name of the column for use in the DAX expression: 'TableName'[ColumnName].
+
+16. Select the following columns in the **Sales Order Lines** table and then press the **Run script (selection only) F5** button. ▶
+    1. **Quantity**
+    2. **Unit Price**
+    3. **Picked Quantity**
+17. Review the **Measurements** folder in the **Sales Order Lines** table to confirm the new measures have been added.
+18. Select the **Model Explorer** to focus and press **Ctrl+Z** to undo the above script.
+19. Update the script to include the below:
+```
+foreach(var c in Selected.Columns) {
+
+    c.Table.AddMeasure(
+        "Sum of " + c.Name,
+        "SUM(" + c.DaxObjectFullName + ")",
+        "Measurements"
+    );
+    
+    c.Table.AddMeasure(
+        "Average of " + c.Name,
+        "AVERAGE(" + c.DaxObjectFullName + ")",
+        "Measurements"
+    );
+
+}
+```
+20. Select the following columns in the **Sales Order Lines** table and then press the **Run script (selection only) F5** button. ▶
+    1. **Quantity**
+    2. **Unit Price**
+    3. **Picked Quantity**
+21. Review the **Measurements** folder in the **Sales Order Lines** table to confirm the new measures have been added.
 
 
 ___
