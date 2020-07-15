@@ -12,6 +12,9 @@ ___
 - [Download and open the Sales Demo PBIX File](https://github.com/itsnotaboutthecell/Power-BI-Sessions/raw/master/An%20Introduction%20to%20Tabular%20Editor/Sales%20Demo.pbix)
 ___
 
+[TOC]
+
+
 # Tabular Editor Preferences
 
 ## Instructions
