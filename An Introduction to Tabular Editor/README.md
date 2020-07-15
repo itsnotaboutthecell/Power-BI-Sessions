@@ -24,6 +24,8 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 
 [Learn More](https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo)
 
+### Objective: Extract the underlying metadata from the model.
+
 ## Instructions
 1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
 2. With the Sales Demo (PBIX) file open, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
@@ -90,7 +92,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
         1. Select from the Rule collections: **Rules on the local machine**
-        2. Press **New rule...** and insert the following values from the hash table below. [Completed Dialog Box](./Images/disable_autotime.png)
+        2. Press **New rule...** and insert the following values from the hash table below. [Completed Dialog Box](./Images/disable_auto_datetime.png)
         3. Once completed press **OK** to save.
         4. Navigate to **Tools** and select **Best Practice Analyzer...** or press the hotkey (**F10**) to view the newly created rule.
 
@@ -101,8 +103,8 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 | Severity | 1 |
 | Category | Performance |
 | Description | Navigate to the Power BI Desktop's Current File properties and disable the setting Auto date/time in Data Load. Note: To disable for all new files created in Power BI Desktop disable the setting Auto date/time for new files in the Global settings Data Load. |
-| Applies to | Partitions |
-| Rule Expression Editor | Table.Name.StartsWith("LocalDateTable_") |
+| Applies to | Tables |
+| Rule Expression Editor | Tables.Any(Name.StartsWith("LocalDateTable_")) |
 | Minimum Compatability Level | CL 1200 (SQL Server 2016 / Azure AS) |
 
 **Important Note:** Changes to the model can be both read from and written to the Power BI dataset. Any changes within Tabular Editor will need to be saved back to the connected database.
@@ -121,6 +123,8 @@ Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
 **Important Note:** 
 - You can use CTRL+Z to undo or CTRL+Y to redo changes.
 - The scripting language is C#
+
+### Objective: Create a script to automate the addition of measures in the model.
 
 ## Instructions
 
@@ -178,6 +182,8 @@ foreach(var table in Selected.Tables) {
     
 };
 ```
+13. Select the **Orders**, **Customers**, **Employeees** and **Customer Transactions** tables and then press the **Run script (selection only) F5** button. ▶
+14. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
 ___
 
 # Calculation Groups
