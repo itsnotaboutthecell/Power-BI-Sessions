@@ -12,14 +12,15 @@ ___
 - [Download and open the Sales Demo PBIX File](https://github.com/itsnotaboutthecell/Power-BI-Sessions/raw/master/An%20Introduction%20to%20Tabular%20Editor/Sales%20Demo.pbix)
 ___
 
-Table of Contents
+# Table of Contents
+- [Tabluar Editor Preferences](#tabular-editor-preferences)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
 - [Best Practices Analyzer](#best-practices-analyzer)
-- [Advanced Scripting (Automation)](#advanced-scripting-automation)
-- - [Tables](#tables)
-- - [Columns](#columns)
-
-
+- [Advanced Scripting](#advanced-scripting-automation)
+    - [Tables](#tables)
+    - [Columns](#columns)
+    
+___
 
 # Tabular Editor Preferences
 
