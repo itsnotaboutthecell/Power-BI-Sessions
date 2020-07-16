@@ -13,18 +13,26 @@ ___
 ___
 
 # Table of Contents
-- [Tabluar Editor Preferences](#tabular-editor-preferences)
+- [Setup](#setup)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
 - [Best Practices Analyzer](#best-practices-analyzer)
 - [Advanced Scripting](#advanced-scripting-automation)
     - [Tables](#tables)
     - [Columns](#columns)
+- [Continue Your Journey](#continue-your-journey)
     
 ___
 
-# Tabular Editor Preferences
+# Setup
 
-## Instructions
+## Power BI Desktop
+
+### Instructions
+1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+
+## Tabular Editor Preferences
+
+### Instructions
 1. Navigate to the **File** menu and select **Preferences**
 2. Enable the settings:
     1. **Detect changes on local AS instance (experimental)**
@@ -48,15 +56,14 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 ### Objective: Extract the underlying metadata from the model.
 
 ## Instructions
-1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
-2. With the Sales Demo (PBIX) file open, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
-3. On your local machine create a folder titled: **Sales Demo**
-4. Within Tabular Editor 
+1. Open the Sales Demo (PBIX) file, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
+2. On your local machine create a folder titled: **Sales Demo**
+3. Within Tabular Editor 
     1. Navigate to **File > Save to Folder...** and select the above **Sales Demo** that was created.
     2. Navigate to the **Sales Demo** folder and review the outputs in comparison with the TOM hierarchy above.
-5. To view the full solution navigate to **File > Save As..** and save the output **model.bim** (bim: business intelligence model), to your local machine to review.
+4. To view the full solution navigate to **File > Save As..** and save the output **model.bim** (bim: business intelligence model), to your local machine to review.
 
-**Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required.
+**Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required. Once changes have been made to a dataset published in the service using the XMLA end point, a PBIX file will no longer be able to be downloaded.
 
 [Learn More About Data Modeling and Management Tools](https://docs.microsoft.com/en-us/power-bi/admin/service-premium-connect-tools#data-modeling-and-management-tools) 
 ___
@@ -77,9 +84,10 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     1. Copy the web address in your browser (must match the below with the prefix raw) - 
     
     ``https://raw.githubusercontent.com/TabularEditor/BestPracticeRules/master/BPARules-standard.json``
+    
 3. Within Tabular Editor:
     1. Navigate to **Tools** and select **Manage BPA Rules...**
-    2. Within the Manage Best Practice Rules dialog
+    2. Within the Manage Best Practice Rules dialog:
         1. Press **Add..**
         2. Select **Include Rule File from URL** and press **OK**
         3. Paste the above BPARules-standard.json web address and press **OK**
@@ -95,7 +103,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     2. Press the **Run script (selection only) F5** button. ▶
     3. Press the **Saves the changes to the connected database (Ctrl+S) button.**
     ![Advanced Scripting and Save](./Images/advanced_scripting_and_save.png)
-6. Within Power BI Desktop
+6. Within Power BI Desktop:
     1. Review the **Orders** table to confirm that all the applicable columns (CustomerID, SalesPersonID, Order Date and Expected Delivery Date) are now hidden.
     2. Right click any field and select **Unhide All**
 7. Within Tabular Editor:
@@ -108,7 +116,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     5. Press the **Saves the changes to the connected database (Ctrl+S) button.**
     
 ### Objective: Create a new rule that can be utilized within the Best Practices Rules.
-    
+
 1. Within Tabular Editor:
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
@@ -158,7 +166,7 @@ Selected.Table.AddMeasure(
     "Measurements" 
 );
 ```
-**Best Practice:** Utilize a single quote in the event of a table name containing a space for the expression.
+**Recommended Practice:** Utilize a single quote in the event of a table name containing a space for the expression.
 
 2. Select the **Orders** table and then press the **Run script (selection only) F5** button. ▶
 3. Within the Model Explorer navigate to the **Orders** table, the **Measurements** folder and select the **Total Count of Orders** measure.
@@ -172,9 +180,10 @@ Selected.Table.AddMeasure(
 ```
 ![Property Pages](./Images/property_pages.png)
 
-5. 
-6. Press **CTRL+Z** to undo actions until the folder and measure have been removed from the **Orders** table.
-7. Within the **Advanced Scripting** tab update the script to include a variable
+5. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+6. Navigate to Power BI Desktop to confirm the new measure has been added to the file.
+7. With the Model Explorer focused, press **CTRL+Z** to undo actions until the folder and measure have been removed from the **Orders** table.
+8. Within the **Advanced Scripting** tab update the script to include a variable
 ```
 var tableName = Selected.Table.Name;
 
@@ -184,13 +193,13 @@ Selected.Table.AddMeasure(
     "Measurements"
 );
 ```
-8. Select the **Orders** table and then press the **Run script (selection only) F5** button. ▶
-9. Confirm within the Model Explorer in the the **Orders** table and the **Measurements** folder the the **Total Count of Orders** measure exists.
-10. Select the **Customers** and **Employees** table and press the **Run script (selection only) F5** button. ▶
-11. An error will now be displayed stating **The selection contains more than one object of type Table** indicating only one active object can be selected.
-12. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
+9. Select the **Orders** table and then press the **Run script (selection only) F5** button. ▶
+10. Confirm within the Model Explorer in the the **Orders** table and the **Measurements** folder the the **Total Count of Orders** measure exists.
+11. Select the **Customers** and **Employees** table and press the **Run script (selection only) F5** button. ▶
+12. An error will now be displayed stating **The selection contains more than one object of type Table** indicating only one active object can be selected.
+13. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected tables**
 ![All Selected Tables](./Images/all_selected_tables.png)
-13. Update the script to include the below:
+14. Update the script to include the below:
 
 ```
 foreach(var table in Selected.Tables) {
@@ -205,12 +214,14 @@ foreach(var table in Selected.Tables) {
     
 };
 ```
-13. Select the **Orders**, **Customers**, **Employeees** and **Customer Transactions** tables and then press the **Run script (selection only) F5** button. ▶
+15. Select the **Orders**, **Customers**, **Employeees** and **Customer Transactions** tables and then press the **Run script (selection only) F5** button. ▶
+16. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+17. Navigate to Power BI Desktop to confirm the new measure has been added to the file.
 
 ### Columns
 
-14. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected columns**
-15. Update the script to include the below:
+1. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected columns**
+2. Update the script to include the below:
 ```
 foreach(var c in Selected.Columns) {
 
@@ -224,13 +235,13 @@ foreach(var c in Selected.Columns) {
 ```
 **Important Note:** The DaxObjectFullName property provides the fully qualified name of the column for use in the DAX expression: 'TableName'[ColumnName].
 
-16. Select the following columns in the **Sales Order Lines** table and then press the **Run script (selection only) F5** button. ▶
+3. Select the following columns in the **Sales Order Lines** table and then press the **Run script (selection only) F5** button. ▶
     1. **Quantity**
     2. **Unit Price**
     3. **Picked Quantity**
-17. Review the **Measurements** folder in the **Sales Order Lines** table to confirm the new measures have been added.
-18. Select the **Model Explorer** to focus and press **Ctrl+Z** to undo the above script.
-19. Update the script to include the below:
+4. Review the **Measurements** folder in the **Sales Order Lines** table to confirm the new measures have been added.
+5. Select the **Model Explorer** to focus and press **Ctrl+Z** to undo the above script.
+6. Update the script to include the below:
 ```
 foreach(var c in Selected.Columns) {
 
@@ -248,17 +259,64 @@ foreach(var c in Selected.Columns) {
 
 }
 ```
-20. Select the following columns in the **Sales Order Lines** table and then press the **Run script (selection only) F5** button. ▶
+7. Select the following columns in the **Sales Order Lines** table and then press the **Run script (selection only) F5** button. ▶
     1. **Quantity**
     2. **Unit Price**
     3. **Picked Quantity**
-21. Review the **Measurements** folder in the **Sales Order Lines** table to confirm the new measures have been added.
-
+8. Review the **Measurements** folder in the **Sales Order Lines** table to confirm the new measures have been added.
+9. Press the **Saves the changes to the connected database (Ctrl+S) button.**
 
 ___
 
-# Optional Content
+# Calculation Groups
 
-## Creating Partitions (Power BI Premium)
+A calculation group is a set of calculation items that are conveniently grouped together because they are variations on the same topic.
 
-[Process Database, Table or Partition](https://docs.microsoft.com/en-us/analysis-services/tabular-models/process-database-table-or-partition-analysis-services)
+### Objective: Create a calculation group for various time intelligence expressions.
+
+## Instructions
+
+Within Tabular Editor:
+1. Right click the **Tables** object and select **Create New** and **Calculation Group ALT+7**
+2. Rename the **New Calculation Group** to **Time Intelligence**
+3. Change the **Name** column's, **Name** property to **Time Calculation** (Pro Tip: **F2** for Edit Mode)
+4. Right click **Calculation Items** and select **New Calculation Item**, repeat the following three times.
+5. For each of the following insert the following expression:
+
+| Key | Value |
+| :--- | :----- |
+| New Calculation | CALCULATE ( SELECTEDMEASURE (), DATESMTD ( 'Calendar'[Date] ) ) |
+| New Calculation 1 | CALCULATE ( SELECTEDMEASURE (), DATESQTD ( 'Calendar'[Date] ) ) |
+| New Calculation 2 | CALCULATE ( SELECTEDMEASURE (), DATESYTD ( 'Calendar'[Date] ) ) | 
+
+6. Select and rename each of the following Calcuation Items individually within the Property Page's **Name** property:
+
+| Key | Value |
+| :--- | :----- |
+| New Calculation | MTD |
+| New Calculation 1 | QTD |
+| New Calculation 2 | YTD | 
+
+7. Select all three calculation items (MTD, QTD, YTD) to bulk update the Property Page's **Format String Expression** property to **"$#,0.00"**
+8. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+ 
+Within Power BI Desktop:
+1. Navigate to the **Time Intelligence** table, right click and select **Refresh data**
+2. Using a **Matrix** visual insert the following:
+
+| Key | Value |
+| :--- | :----- |
+| Rows | 'Calendar'[Date] |
+| Values | [Total Unit Price] |
+| Columns | 'Time Intelligence'[Time Calculation] |
+___
+
+# Continue Your Journey
+
+### An indepth walk through of Tabular Editor
+[PowerBI.Tips - Tabular Editor Playlist](https://www.youtube.com/watch?v=c-jZMzsvKnM&list=PLZjKz7bVsqV1mmA48wXqrSDPbDSGBvLdL)
+
+### Calculation Groups
+[SQLBI - Creating calculation groups in Power BI Desktop using Tabular Editor](https://www.youtube.com/watch?v=a4zYT-N-zsU)
+
+[SQLBI - Calculation Groups (Blog)](https://www.sqlbi.com/calculation-groups/)
