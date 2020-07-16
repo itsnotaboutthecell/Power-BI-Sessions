@@ -289,7 +289,7 @@ Within Tabular Editor:
 | New Calculation 1 | CALCULATE ( SELECTEDMEASURE (), DATESQTD ( 'Calendar'[Date] ) ) |
 | New Calculation 2 | CALCULATE ( SELECTEDMEASURE (), DATESYTD ( 'Calendar'[Date] ) ) | 
 
-6. Select and rename each of the following Calcuation Items individually within the Property Page's **Name** property:
+6. Individually select and rename each of the following Calcuation Items individually within the Property Page's **Name** property:
 
 | Key | Value |
 | :--- | :----- |
@@ -297,7 +297,12 @@ Within Tabular Editor:
 | New Calculation 1 | QTD |
 | New Calculation 2 | YTD | 
 
+![Calculated Items](./Images/calc_items.png)
+
 7. Select all three calculation items (MTD, QTD, YTD) to bulk update the Property Page's **Format String Expression** property to **"$#,0.00"**
+
+![Format String](./Images/format_string.png)
+
 8. Press the **Saves the changes to the connected database (Ctrl+S) button.**
  
 Within Power BI Desktop:
