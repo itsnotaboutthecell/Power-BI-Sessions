@@ -19,6 +19,7 @@ ___
 - [Advanced Scripting](#advanced-scripting-automation)
     - [Tables](#tables)
     - [Columns](#columns)
+- [Calculation Groups](#calculation-groups)
 - [Continue Your Journey](#continue-your-journey)
     
 ___
@@ -121,7 +122,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
     1. Navigate to **Tools** and select **Manage BPA Rules...**
     2. Within the Manage Best Practice Rules dialog
         1. Select from the Rule collections: **Rules on the local machine**
-        2. Press **New rule...** and insert the following values from the hash table below. [Completed Dialog Box](./Images/disable_auto_datetime.png)
+        2. Press **New rule...** and insert the following values from the hash table below.
         3. Once completed press **OK** to save.
 
 | Key | Value |
@@ -131,7 +132,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 | Severity | 1 |
 | Category | Performance |
 | Description | Navigate to the Power BI Desktop's Current File properties and disable the setting Auto date/time in Data Load. Note: To disable for all new files created in Power BI Desktop disable the setting Auto date/time for new files in the Global settings Data Load. |
-| Applies to | Tables |
+| Applies to | Model |
 | Rule Expression Editor | Tables.Any(Name.StartsWith("LocalDateTable_")) |
 | Minimum Compatability Level | CL 1200 (SQL Server 2016 / Azure AS) |
 
@@ -145,8 +146,6 @@ ___
 Advanced Scripting, lets users write a script, to more directly manipulate the objects in the loaded Tabular Model, that can be saved as Custom Actions for easy invocation directly in the Explorer Tree.
 
 Website: https://github.com/otykier/TabularEditor/wiki/Advanced-Scripting
-
-Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
 
 **Important Note:** 
 - You can use CTRL+Z to undo or CTRL+Y to redo changes.
@@ -323,6 +322,9 @@ ___
 
 ### An indepth walk through of Tabular Editor
 [PowerBI.Tips - Tabular Editor Playlist](https://www.youtube.com/watch?v=c-jZMzsvKnM&list=PLZjKz7bVsqV1mmA48wXqrSDPbDSGBvLdL)
+
+### Advanced Scripting Examples
+[Script Snippets](https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets)
 
 ### Calculation Groups
 [SQLBI - Creating calculation groups in Power BI Desktop using Tabular Editor](https://www.youtube.com/watch?v=a4zYT-N-zsU)
