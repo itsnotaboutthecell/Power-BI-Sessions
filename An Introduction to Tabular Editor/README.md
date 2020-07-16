@@ -272,24 +272,16 @@ ___
 
 A calculation group is a set of calculation items that are conveniently grouped together because they are variations on the same topic.
 
-Website: https://github.com/otykier/TabularEditor/wiki/Advanced-Scripting
-
-Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
-
-**Important Note:** 
-- You can use CTRL+Z to undo or CTRL+Y to redo changes.
-- The scripting language is C#
-
 ### Objective: Create a calculation group for various time intelligence expressions.
 
 ## Instructions
 
-1. Within Tabular Editor:
-    1. Right click the **Tables** object and select **Create New** and **Calculation Group ALT+7**
-    2. Rename the **New Calculation Group** to **Time Intelligence**
-    3. Change the **Name** column's, **Name** property to **Time Calculation** (Pro Tip: **F2** for Edit Mode)
-    4. Right click **Calculation Items** and select **New Calculation Item**, repeat the following three times.
-    5. For each of the following insert the following expression:
+Within Tabular Editor:
+1. Right click the **Tables** object and select **Create New** and **Calculation Group ALT+7**
+2. Rename the **New Calculation Group** to **Time Intelligence**
+3. Change the **Name** column's, **Name** property to **Time Calculation** (Pro Tip: **F2** for Edit Mode)
+4. Right click **Calculation Items** and select **New Calculation Item**, repeat the following three times.
+5. For each of the following insert the following expression:
 
 | Key | Value |
 | :--- | :----- |
@@ -297,7 +289,7 @@ Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
 | New Calculation 1 | CALCULATE ( SELECTEDMEASURE (), DATESQTD ( 'Calendar'[Date] ) ) |
 | New Calculation 2 | CALCULATE ( SELECTEDMEASURE (), DATESYTD ( 'Calendar'[Date] ) ) | 
 
-    6. Select and rename each of the following Calcuation Items individually within the Property Page's **Name** property:
+6. Select and rename each of the following Calcuation Items individually within the Property Page's **Name** property:
 
 | Key | Value |
 | :--- | :----- |
@@ -305,12 +297,12 @@ Examples: https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets
 | New Calculation 1 | QTD |
 | New Calculation 2 | YTD | 
 
-    7. Select all three calculation items (MTD, QTD, YTD) to bulk update the Property Page's **Format String Expression** property to **"$#,0.00"**
-    8. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+7. Select all three calculation items (MTD, QTD, YTD) to bulk update the Property Page's **Format String Expression** property to **"$#,0.00"**
+8. Press the **Saves the changes to the connected database (Ctrl+S) button.**
  
- 2. Within Power BI Desktop:
-    1. Navigate to the **Time Intelligence** table, right click and select **Refresh data**
-    2. Using a **Matrix** visual insert the following:
+Within Power BI Desktop:
+1. Navigate to the **Time Intelligence** table, right click and select **Refresh data**
+2. Using a **Matrix** visual insert the following:
 
 | Key | Value |
 | :--- | :----- |
