@@ -314,6 +314,9 @@ Within Power BI Desktop:
 | Rows | 'Calendar'[Date] |
 | Values | [Total Unit Price] |
 | Columns | 'Time Intelligence'[Time Calculation] |
+
+![Power BI Matrix](./Images/pbi_matrix.png)
+
 ___
 
 # Continue Your Journey
