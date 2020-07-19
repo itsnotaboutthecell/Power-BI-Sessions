@@ -43,7 +43,8 @@ ___
 
 ![Tabular Editor Preferences](./Images/tabular_editor_preferences.png)
 
-<a href="https://www.youtube.com/watch?v=pFX20PPxXjs&auto_play=true" target="_blank"><b>Optional:<b> Guided Video<img src="./Images/walkthrough_setup.png"></a>
+### Optional: Guided Video
+<a href="https://www.youtube.com/watch?v=pFX20PPxXjs&auto_play=true" target="_blank"><img src="./Images/walkthrough_setup.png"></a>
 
 **Important Note:** Always create a backup of your PBIX file prior to editing to avoid any issues in the event of a corrupted model.
 
