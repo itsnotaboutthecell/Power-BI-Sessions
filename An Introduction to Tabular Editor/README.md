@@ -276,11 +276,12 @@ A calculation group is a set of calculation items that are conveniently grouped 
 ## Instructions
 
 Within Tabular Editor:
-1. Right click the **Tables** object and select **Create New** and **Calculation Group ALT+7**
-2. Rename the **New Calculation Group** to **Time Intelligence**
-3. Change the **Name** column's, **Name** property to **Time Calculation** (Pro Tip: **F2** for Edit Mode)
-4. Right click **Calculation Items** and select **New Calculation Item**, repeat the following three times.
-5. For each of the following insert the following expression:
+1. Navigate to the **Calendar** table's **Date** column and edit the Property Pages **Hidden** property to **False**.
+2. Right click the **Tables** object and select **Create New** and **Calculation Group ALT+7**
+3. Rename the **New Calculation Group** to **Time Intelligence**
+4. Change the **Name** column's, **Name** property to **Time Calculation** (Pro Tip: **F2** for Edit Mode)
+5. Right click **Calculation Items** and select **New Calculation Item**, repeat the following three times.
+6. For each of the following insert the following expression:
 
 | Key | Value |
 | :--- | :----- |
@@ -288,7 +289,7 @@ Within Tabular Editor:
 | New Calculation 1 | CALCULATE ( SELECTEDMEASURE (), DATESQTD ( 'Calendar'[Date] ) ) |
 | New Calculation 2 | CALCULATE ( SELECTEDMEASURE (), DATESYTD ( 'Calendar'[Date] ) ) | 
 
-6. Individually select and rename each of the following Calcuation Items individually within the Property Page's **Name** property:
+7. Individually select and rename each of the following Calcuation Items individually within the Property Page's **Name** property:
 
 | Key | Value |
 | :--- | :----- |
@@ -298,11 +299,11 @@ Within Tabular Editor:
 
 ![Calculated Items](./Images/calc_items.png)
 
-7. Select all three calculation items (MTD, QTD, YTD) to bulk update the Property Page's **Format String Expression** property to **"$#,0.00"**
+8. Select all three calculation items (MTD, QTD, YTD) to bulk update the Property Page's **Format String Expression** property to **"$#,0.00"**
 
 ![Format String](./Images/format_string.png)
 
-8. Press the **Saves the changes to the connected database (Ctrl+S) button.**
+9. Press the **Saves the changes to the connected database (Ctrl+S) button.**
  
 Within Power BI Desktop:
 1. Navigate to the **Time Intelligence** table, right click and select **Refresh data**
@@ -323,8 +324,10 @@ ___
 ### An indepth walk through of Tabular Editor
 [PowerBI.Tips - Tabular Editor Playlist](https://www.youtube.com/watch?v=c-jZMzsvKnM&list=PLZjKz7bVsqV1mmA48wXqrSDPbDSGBvLdL)
 
-### Advanced Scripting Examples
+### Advanced Scripting
 [Script Snippets](https://github.com/otykier/TabularEditor/wiki/Useful-script-snippets)
+
+[Community Scripts](https://github.com/TabularEditor/Scripts)
 
 ### Calculation Groups
 [SQLBI - Creating calculation groups in Power BI Desktop using Tabular Editor](https://www.youtube.com/watch?v=a4zYT-N-zsU)
