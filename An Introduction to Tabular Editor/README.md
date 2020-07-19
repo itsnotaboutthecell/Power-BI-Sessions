@@ -28,14 +28,13 @@ ___
 
 # Setup
 
-## Power BI Desktop
+## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=pFX20PPxXjs&auto_play=true)
 
-### Instructions
+### Power BI Desktop
 1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
 
-## Tabular Editor Preferences
-
-### Instructions
+### Tabular Editor
 1. Navigate to the **File** menu and select **Preferences**
 2. Enable the settings:
     1. **Detect changes on local AS instance (experimental)**
@@ -43,10 +42,8 @@ ___
 
 ![Tabular Editor Preferences](./Images/tabular_editor_preferences.png)
 
-### Optional: Guided Video
-<a href="https://www.youtube.com/watch?v=pFX20PPxXjs&auto_play=true" target="_blank"><img src="./Images/walkthrough_setup.png"></a>
-
 **Important Note:** Always create a backup of your PBIX file prior to editing to avoid any issues in the event of a corrupted model.
+
 
 # Tabular Object Model Hierarchy
 **Source:** Microsoft Docs
@@ -57,11 +54,10 @@ The Tabular Object Model (TOM) exposes native tabular metadata, such as model, t
 
 From a logical perspective, all tabular objects form a tree, the root of which is a Model, descended from Database. Server and Database are not considered tabular because these objects can also represent a multidimensional database hosted on a server running in Multidimensional mode, or a tabular model at a lower compatibility level that does not use tabular metadata for object definitions.
 
-<a href="https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo" target="_blank">Learn More</a>
-
 ### Objective: Extract the underlying metadata from the model.
 
 ## Instructions
+### [Optional: Guided Video](https://youtu.be/NFz-NaGXZ4w&auto_play=true)
 1. Open the Sales Demo (PBIX) file, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
 2. On your local machine create a folder titled: **Sales Demo**
 3. Within Tabular Editor 
@@ -72,6 +68,7 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 **Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required. Once changes have been made to a dataset published in the service using the XMLA end point, a PBIX file will no longer be able to be downloaded.
 
 [Learn More About Data Modeling and Management Tools](https://docs.microsoft.com/en-us/power-bi/admin/service-premium-connect-tools#data-modeling-and-management-tools) 
+
 ___
 
 # Best Practices Analyzer
