@@ -17,7 +17,7 @@ ___
 # Table of Contents
 - [Setup](#setup)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
-- [Best Practices Analyzer](#best-practices-analyzer)
+- [Best Practice Analyzer](#best-practice-analyzer)
 - [Advanced Scripting](#advanced-scripting-automation)
     - [Tables](#tables)
     - [Columns](#columns)
@@ -71,7 +71,7 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 
 ___
 
-# Best Practices Analyzer
+# Best Practice Analyzer
 
 ### About:
 The best practices rules are a collection of community contributions for Tabular Model development. They let you define global or model-specific rules using a simple expression language. At any time, you can check whether objects in your model satisfy the rules.
@@ -79,9 +79,10 @@ The best practices rules are a collection of community contributions for Tabular
 Website: https://github.com/TabularEditor/BestPracticeRules
 
 
-### Objective: Import the Best Practices Rules collection and apply to the model.
+### Objective: Import the Best Practice Rules collection and apply to the model.
 
 ## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=PrgPo6Cccfs&auto_play=true)
 1. Navigate to the repository, https://github.com/TabularEditor/BestPracticeRules
 2. Navigate to the [BPARules-standard.json](https://github.com/TabularEditor/BestPracticeRules/blob/master/BPARules-standard.json) file and press the Raw button.
     1. Copy the web address in your browser (must match the below with the prefix raw) - 
