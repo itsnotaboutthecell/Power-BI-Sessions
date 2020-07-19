@@ -9,7 +9,9 @@ ___
 
 **Follow Along:**
 - [Download and Install Tabular Editor](https://github.com/otykier/TabularEditor/releases)
+    - <a href="https://www.youtube.com/watch?v=7Cb7ZuK5EZA&auto_play=true" target="_blank">Optional: Guided Video</a>
 - [Download and open the Sales Demo PBIX File](https://github.com/itsnotaboutthecell/Power-BI-Sessions/raw/master/An%20Introduction%20to%20Tabular%20Editor/Sales%20Demo.pbix)
+
 ___
 
 # Table of Contents
@@ -41,6 +43,9 @@ ___
 
 ![Tabular Editor Preferences](./Images/tabular_editor_preferences.png)
 
+### Optional: Guided Video
+<a href="https://www.youtube.com/watch?v=pFX20PPxXjs&auto_play=true"><img src="./Images/walkthrough_setup.png"></a>
+
 **Important Note:** Always create a backup of your PBIX file prior to editing to avoid any issues in the event of a corrupted model.
 
 # Tabular Object Model Hierarchy
@@ -52,7 +57,7 @@ The Tabular Object Model (TOM) exposes native tabular metadata, such as model, t
 
 From a logical perspective, all tabular objects form a tree, the root of which is a Model, descended from Database. Server and Database are not considered tabular because these objects can also represent a multidimensional database hosted on a server running in Multidimensional mode, or a tabular model at a lower compatibility level that does not use tabular metadata for object definitions.
 
-[Learn More](https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo)
+<a href="https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo" target="_blank">Learn More</a>
 
 ### Objective: Extract the underlying metadata from the model.
 
