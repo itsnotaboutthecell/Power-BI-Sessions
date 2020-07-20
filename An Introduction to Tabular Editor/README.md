@@ -157,6 +157,7 @@ Website: https://github.com/otykier/TabularEditor/wiki/Advanced-Scripting
 ### Objective: Create a script to automate the addition of measures in the model.
 
 ## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=qtNVvaaCKnc&auto_play=true)
 
 ### Tables
 
