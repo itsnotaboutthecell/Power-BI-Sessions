@@ -225,11 +225,11 @@ foreach(var table in Selected.Tables) {
 1. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected columns**
 2. Update the script to include the below:
 ```
-foreach(var c in Selected.Columns) {
+foreach(var column in Selected.Columns) {
 
     c.Table.AddMeasure(
-        "Sum of " + c.Name,
-        "SUM(" + c.DaxObjectFullName + ")",
+        "Sum of " + column.Name,
+        "SUM(" + column.DaxObjectFullName + ")",
         "Measurements"
     );
 
@@ -245,17 +245,17 @@ foreach(var c in Selected.Columns) {
 5. Select the **Model Explorer** to focus and press **Ctrl+Z** to undo the above script.
 6. Update the script to include the below:
 ```
-foreach(var c in Selected.Columns) {
+foreach(var column in Selected.Columns) {
 
     c.Table.AddMeasure(
-        "Sum of " + c.Name,
-        "SUM(" + c.DaxObjectFullName + ")",
+        "Sum of " + column.Name,
+        "SUM(" + column.DaxObjectFullName + ")",
         "Measurements"
     );
     
     c.Table.AddMeasure(
-        "Average of " + c.Name,
-        "AVERAGE(" + c.DaxObjectFullName + ")",
+        "Average of " + column.Name,
+        "AVERAGE(" + column.DaxObjectFullName + ")",
         "Measurements"
     );
 
