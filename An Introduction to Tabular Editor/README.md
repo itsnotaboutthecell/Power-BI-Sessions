@@ -9,7 +9,7 @@ ___
 
 **Follow Along:**
 - [Download and Install Tabular Editor](https://github.com/otykier/TabularEditor/releases)
-    - <a href="https://www.youtube.com/watch?v=7Cb7ZuK5EZA&auto_play=true" target="_blank">Optional: Guided Video</a>
+    - <a href="https://www.youtube.com/watch?v=7Cb7ZuK5EZA&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=1" target="_blank">Optional: Guided Video</a>
 - [Download and open the Sales Demo PBIX File](https://github.com/itsnotaboutthecell/Power-BI-Sessions/raw/master/An%20Introduction%20to%20Tabular%20Editor/Sales%20Demo.pbix)
 
 ___
@@ -29,7 +29,7 @@ ___
 # Setup
 
 ## Instructions
-### [Optional: Guided Video](https://www.youtube.com/watch?v=pFX20PPxXjs&auto_play=true)
+### [Optional: Guided Video](https://www.youtube.com/watch?v=pFX20PPxXjs&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=2)
 
 ### Power BI Desktop
 1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
@@ -57,7 +57,7 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 ### Objective: Extract the underlying metadata from the model.
 
 ## Instructions
-### [Optional: Guided Video](https://youtu.be/NFz-NaGXZ4w&auto_play=true)
+### [Optional: Guided Video](https://www.youtube.com/watch?v=NFz-NaGXZ4w&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=3)
 1. Open the Sales Demo (PBIX) file, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
 2. On your local machine create a folder titled: **Sales Demo**
 3. Within Tabular Editor 
@@ -82,7 +82,7 @@ Website: https://github.com/TabularEditor/BestPracticeRules
 ### Objective: Import the Best Practice Rules collection and apply to the model.
 
 ## Instructions
-### [Optional: Guided Video](https://www.youtube.com/watch?v=PrgPo6Cccfs&auto_play=true)
+### [Optional: Guided Video](https://www.youtube.com/watch?v=PrgPo6Cccfs&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=4)
 1. Navigate to the repository, https://github.com/TabularEditor/BestPracticeRules
 2. Navigate to the [BPARules-standard.json](https://github.com/TabularEditor/BestPracticeRules/blob/master/BPARules-standard.json) file and press the Raw button.
     1. Copy the web address in your browser (must match the below with the prefix raw) - 
@@ -157,7 +157,7 @@ Website: https://github.com/otykier/TabularEditor/wiki/Advanced-Scripting
 ### Objective: Create a script to automate the addition of measures in the model.
 
 ## Instructions
-### [Optional: Guided Video](https://www.youtube.com/watch?v=qtNVvaaCKnc&auto_play=true)
+### [Optional: Guided Video](https://www.youtube.com/watch?v=qtNVvaaCKnc&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=5)
 
 ### Tables
 
@@ -278,7 +278,7 @@ A calculation group is a set of calculation items that are conveniently grouped 
 ### Objective: Create a calculation group for various time intelligence expressions.
 
 ## Instructions
-### [Optional: Guided Video](https://youtu.be/xOkmNZd0SY4&auto_play=true)
+### [Optional: Guided Video](https://www.youtube.com/watch?v=xOkmNZd0SY4&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=6)
 
 Within Tabular Editor:
 1. Navigate to the **Calendar** table's **Date** column and edit the Property Pages **Hidden** property to **False**.
