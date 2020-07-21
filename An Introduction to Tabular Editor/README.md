@@ -228,7 +228,7 @@ foreach(var table in Selected.Tables) {
 ```
 foreach(var column in Selected.Columns) {
 
-    c.Table.AddMeasure(
+    column.Table.AddMeasure(
         "Sum of " + column.Name,
         "SUM(" + column.DaxObjectFullName + ")",
         "Measurements"
@@ -248,13 +248,13 @@ foreach(var column in Selected.Columns) {
 ```
 foreach(var column in Selected.Columns) {
 
-    c.Table.AddMeasure(
+    column.Table.AddMeasure(
         "Sum of " + column.Name,
         "SUM(" + column.DaxObjectFullName + ")",
         "Measurements"
     );
     
-    c.Table.AddMeasure(
+    column.Table.AddMeasure(
         "Average of " + column.Name,
         "AVERAGE(" + column.DaxObjectFullName + ")",
         "Measurements"
