@@ -37,8 +37,8 @@ ___
 ### Tabular Editor
 1. Navigate to the **File** menu and select **Preferences**
 2. Enable the settings:
-    1. **Detect changes on local AS instance (experimental)**
-    2. [Optional] Allow unsupported Power BI features (experimental)
+    1. **Allow unsupported Power BI features (experimental)**
+    2. **Detect changes on local AS instance (experimental)**
 
 ![Tabular Editor Preferences](./Images/tabular_editor_preferences.png)
 
