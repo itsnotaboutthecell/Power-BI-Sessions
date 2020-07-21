@@ -335,6 +335,8 @@ ___
 [Community Scripts](https://github.com/TabularEditor/Scripts)
 
 ### Calculation Groups
+[Microsoft Docs](https://docs.microsoft.com/en-us/analysis-services/tabular-models/calculation-groups?view=asallproducts-allversions)
+
 [SQLBI - Creating calculation groups in Power BI Desktop using Tabular Editor](https://www.youtube.com/watch?v=a4zYT-N-zsU)
 
 [SQLBI - Calculation Groups (Blog)](https://www.sqlbi.com/calculation-groups/)
