@@ -278,6 +278,7 @@ A calculation group is a set of calculation items that are conveniently grouped 
 ### Objective: Create a calculation group for various time intelligence expressions.
 
 ## Instructions
+### [Optional: Guided Video](https://youtu.be/xOkmNZd0SY4&auto_play=true)
 
 Within Tabular Editor:
 1. Navigate to the **Calendar** table's **Date** column and edit the Property Pages **Hidden** property to **False**.
