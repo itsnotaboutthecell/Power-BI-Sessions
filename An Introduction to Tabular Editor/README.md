@@ -9,7 +9,7 @@ ___
 
 **Follow Along:**
 - [Download and Install Tabular Editor](https://github.com/otykier/TabularEditor/releases)
-    - <a href="https://www.youtube.com/watch?v=7Cb7ZuK5EZA&auto_play=true" target="_blank">Optional: Guided Video</a>
+    - <a href="https://www.youtube.com/watch?v=7Cb7ZuK5EZA&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=1" target="_blank">Optional: Guided Video</a>
 - [Download and open the Sales Demo PBIX File](https://github.com/itsnotaboutthecell/Power-BI-Sessions/raw/master/An%20Introduction%20to%20Tabular%20Editor/Sales%20Demo.pbix)
 
 ___
@@ -17,7 +17,7 @@ ___
 # Table of Contents
 - [Setup](#setup)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
-- [Best Practices Analyzer](#best-practices-analyzer)
+- [Best Practice Analyzer](#best-practice-analyzer)
 - [Advanced Scripting](#advanced-scripting-automation)
     - [Tables](#tables)
     - [Columns](#columns)
@@ -28,25 +28,22 @@ ___
 
 # Setup
 
-## Power BI Desktop
+## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=pFX20PPxXjs&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=2)
 
-### Instructions
+### Power BI Desktop
 1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
 
-## Tabular Editor Preferences
-
-### Instructions
+### Tabular Editor
 1. Navigate to the **File** menu and select **Preferences**
 2. Enable the settings:
-    1. **Detect changes on local AS instance (experimental)**
-    2. [Optional] Allow unsupported Power BI features (experimental)
+    1. **Allow unsupported Power BI features (experimental)**
+    2. **Detect changes on local AS instance (experimental)**
 
 ![Tabular Editor Preferences](./Images/tabular_editor_preferences.png)
 
-### Optional: Guided Video
-<a href="https://www.youtube.com/watch?v=pFX20PPxXjs&auto_play=true" target="_blank"><img src="./Images/walkthrough_setup.png"></a>
-
 **Important Note:** Always create a backup of your PBIX file prior to editing to avoid any issues in the event of a corrupted model.
+
 
 # Tabular Object Model Hierarchy
 **Source:** Microsoft Docs
@@ -57,11 +54,10 @@ The Tabular Object Model (TOM) exposes native tabular metadata, such as model, t
 
 From a logical perspective, all tabular objects form a tree, the root of which is a Model, descended from Database. Server and Database are not considered tabular because these objects can also represent a multidimensional database hosted on a server running in Multidimensional mode, or a tabular model at a lower compatibility level that does not use tabular metadata for object definitions.
 
-<a href="https://docs.microsoft.com/en-us/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo" target="_blank">Learn More</a>
-
 ### Objective: Extract the underlying metadata from the model.
 
 ## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=NFz-NaGXZ4w&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=3)
 1. Open the Sales Demo (PBIX) file, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
 2. On your local machine create a folder titled: **Sales Demo**
 3. Within Tabular Editor 
@@ -72,9 +68,10 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 **Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required. Once changes have been made to a dataset published in the service using the XMLA end point, a PBIX file will no longer be able to be downloaded.
 
 [Learn More About Data Modeling and Management Tools](https://docs.microsoft.com/en-us/power-bi/admin/service-premium-connect-tools#data-modeling-and-management-tools) 
+
 ___
 
-# Best Practices Analyzer
+# Best Practice Analyzer
 
 ### About:
 The best practices rules are a collection of community contributions for Tabular Model development. They let you define global or model-specific rules using a simple expression language. At any time, you can check whether objects in your model satisfy the rules.
@@ -82,9 +79,10 @@ The best practices rules are a collection of community contributions for Tabular
 Website: https://github.com/TabularEditor/BestPracticeRules
 
 
-### Objective: Import the Best Practices Rules collection and apply to the model.
+### Objective: Import the Best Practice Rules collection and apply to the model.
 
 ## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=PrgPo6Cccfs&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=4)
 1. Navigate to the repository, https://github.com/TabularEditor/BestPracticeRules
 2. Navigate to the [BPARules-standard.json](https://github.com/TabularEditor/BestPracticeRules/blob/master/BPARules-standard.json) file and press the Raw button.
     1. Copy the web address in your browser (must match the below with the prefix raw) - 
@@ -159,6 +157,7 @@ Website: https://github.com/otykier/TabularEditor/wiki/Advanced-Scripting
 ### Objective: Create a script to automate the addition of measures in the model.
 
 ## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=qtNVvaaCKnc&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=5)
 
 ### Tables
 
@@ -227,11 +226,11 @@ foreach(var table in Selected.Tables) {
 1. Within the  **Advanced Scripting** tab select **Samples**, **Tutorials** and **Loop through all selected columns**
 2. Update the script to include the below:
 ```
-foreach(var c in Selected.Columns) {
+foreach(var column in Selected.Columns) {
 
-    c.Table.AddMeasure(
-        "Sum of " + c.Name,
-        "SUM(" + c.DaxObjectFullName + ")",
+    column.Table.AddMeasure(
+        "Sum of " + column.Name,
+        "SUM(" + column.DaxObjectFullName + ")",
         "Measurements"
     );
 
@@ -247,17 +246,17 @@ foreach(var c in Selected.Columns) {
 5. Select the **Model Explorer** to focus and press **Ctrl+Z** to undo the above script.
 6. Update the script to include the below:
 ```
-foreach(var c in Selected.Columns) {
+foreach(var column in Selected.Columns) {
 
-    c.Table.AddMeasure(
-        "Sum of " + c.Name,
-        "SUM(" + c.DaxObjectFullName + ")",
+    column.Table.AddMeasure(
+        "Sum of " + column.Name,
+        "SUM(" + column.DaxObjectFullName + ")",
         "Measurements"
     );
     
-    c.Table.AddMeasure(
-        "Average of " + c.Name,
-        "AVERAGE(" + c.DaxObjectFullName + ")",
+    column.Table.AddMeasure(
+        "Average of " + column.Name,
+        "AVERAGE(" + column.DaxObjectFullName + ")",
         "Measurements"
     );
 
@@ -279,6 +278,7 @@ A calculation group is a set of calculation items that are conveniently grouped 
 ### Objective: Create a calculation group for various time intelligence expressions.
 
 ## Instructions
+### [Optional: Guided Video](https://www.youtube.com/watch?v=xOkmNZd0SY4&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=6)
 
 Within Tabular Editor:
 1. Navigate to the **Calendar** table's **Date** column and edit the Property Pages **Hidden** property to **False**.
@@ -335,6 +335,12 @@ ___
 [Community Scripts](https://github.com/TabularEditor/Scripts)
 
 ### Calculation Groups
+[Microsoft Docs](https://docs.microsoft.com/en-us/analysis-services/tabular-models/calculation-groups?view=asallproducts-allversions)
+
 [SQLBI - Creating calculation groups in Power BI Desktop using Tabular Editor](https://www.youtube.com/watch?v=a4zYT-N-zsU)
 
 [SQLBI - Calculation Groups (Blog)](https://www.sqlbi.com/calculation-groups/)
+
+___
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
