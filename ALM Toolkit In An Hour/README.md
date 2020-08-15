@@ -22,6 +22,17 @@ ___
 - [Setup](#setup)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
 
+___
+
+# Setup
+
+## Instructions
+### [Optional: Guided Video]()
+
+### Power BI Desktop
+1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+
+___
 
 # Tabular Object Model Hierarchy
 **Source:** Microsoft Docs
@@ -33,13 +44,9 @@ The Tabular Object Model (TOM) exposes native tabular metadata, such as model, t
 From a logical perspective, all tabular objects form a tree, the root of which is a Model, descended from Database. Server and Database are not considered tabular because these objects can also represent a multidimensional database hosted on a server running in Multidimensional mode, or a tabular model at a lower compatibility level that does not use tabular metadata for object definitions.
 
 ## Instructions
-### [Optional: Guided Video](https://www.youtube.com/watch?v=NFz-NaGXZ4w&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=3)
-1. Open the Sales Demo (PBIX) file, navigate to the **External Tools** ribbon in Power BI Desktop and select **Tabular Editor**.
-2. On your local machine create a folder titled: **Sales Demo**
-3. Within Tabular Editor 
-    1. Navigate to **File > Save to Folder...** and select the above **Sales Demo** that was created.
-    2. Navigate to the **Sales Demo** folder and review the outputs in comparison with the TOM hierarchy above.
-4. To view the full solution navigate to **File > Save As..** and save the output **model.bim** (bim: business intelligence model), to your local machine to review.
+### [Optional: Guided Video]()
+1. Open the Sales Demo (PBIX) file, navigate to the **External Tools** ribbon in Power BI Desktop and select **ALM Toolkit**.
+
 
 **Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required. Once changes have been made to a dataset published in the service using the XMLA end point, a PBIX file will no longer be able to be downloaded.
 
