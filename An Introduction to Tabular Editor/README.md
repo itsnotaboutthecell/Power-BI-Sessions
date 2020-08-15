@@ -1,4 +1,4 @@
-# An Introduction to Tabular Editor ![Tabular Editor](./Images/tabular_editor.png)
+# Tabular Editor In An Hour ![Tabular Editor](./Images/tabular_editor.png)
 
 
 ### About:
