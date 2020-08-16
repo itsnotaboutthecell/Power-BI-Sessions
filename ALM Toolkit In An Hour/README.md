@@ -52,16 +52,14 @@ ___
 ### Power BI Desktop
 1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
 2. Open ALM Toolkit, select Options and enable the following options:
-![Options](./images/Options.png)
+![Options](./Images/Options.png)
 
 Learn More:
-- [Include cultures](https://docs.microsoft.com/en-us/analysis-services/tabular-models/translations-in-tabular-models-analysis-services?view=asallproducts-allversions)
-- [Processing Options](https://docs.microsoft.com/en-us/analysis-services/multidimensional-models/processing-options-and-settings-analysis-services?view=asallproducts-allversions#processing-options)
+[Processing Options](https://docs.microsoft.com/en-us/analysis-services/tabular-models/process-database-table-or-partition-analysis-services?view=asallproducts-allversions#bkmk_process_db)
 
-| Mode | Applies to | Description |
-
-
-
-
-
-https://docs.microsoft.com/en-us/analysis-services/multidimensional-models/processing-options-and-settings-analysis-services?view=asallproducts-allversions#processing-options
+| Mode | Description |
+| :--- | :-----|
+| Recalc | Updates and recalculates hierarchies, relationships, and calculated columns. |
+| Default | Detects the process state of database objects, and performs processing necessary to deliver unprocessed or partially processed objects to a fully processed state. Data for empty tables and partitions is loaded; hierarchies, calculated columns, and relationships are built or rebuilt (recalculated). |
+| Do Not Process | Will copy metadata but won't perform processing. |
+| Full | Processes a database and all the objects that it contains. <b>When Process Full is run for an object that has already been processed, Analysis Services drops all data in the object, and then processes the object.</b> This kind of processing is required when a structural change has been made to an object. This option requires the most resources. |
