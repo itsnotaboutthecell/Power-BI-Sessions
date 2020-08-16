@@ -19,18 +19,8 @@ ___
 ___
 
 # Table of Contents
-- [Setup](#setup)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
-
-___
-
-# Setup
-
-## Instructions
-### [Optional: Guided Video]()
-
-### Power BI Desktop
-1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+- [Setup](#setup)
 
 ___
 
@@ -51,3 +41,25 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 **Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required. Once changes have been made to a dataset published in the service using the XMLA end point, a PBIX file will no longer be able to be downloaded.
 
 [Learn More About Data Modeling and Management Tools](https://docs.microsoft.com/en-us/power-bi/admin/service-premium-connect-tools#data-modeling-and-management-tools) 
+
+___
+
+# Setup
+
+## Instructions
+### [Optional: Guided Video]()
+
+### Power BI Desktop
+1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+2. Open ALM Toolkit, select Options and enable the following options:
+![Options](./Images/Options.png)
+
+Learn More:
+[Processing Options](https://docs.microsoft.com/en-us/analysis-services/tabular-models/process-database-table-or-partition-analysis-services?view=asallproducts-allversions#bkmk_process_db)
+
+| Mode | Description |
+| :--- | :-----|
+| Recalc | Updates and recalculates hierarchies, relationships, and calculated columns. |
+| Default | Detects the process state of database objects, and performs processing necessary to deliver unprocessed or partially processed objects to a fully processed state. Data for empty tables and partitions is loaded; hierarchies, calculated columns, and relationships are built or rebuilt (recalculated). |
+| Do Not Process | Will copy metadata but won't perform processing. |
+| Full | Processes a database and all the objects that it contains. <b>When Process Full is run for an object that has already been processed, Analysis Services drops all data in the object, and then processes the object.</b> This kind of processing is required when a structural change has been made to an object. This option requires the most resources. |
