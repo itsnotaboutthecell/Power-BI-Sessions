@@ -19,18 +19,8 @@ ___
 ___
 
 # Table of Contents
-- [Setup](#setup)
 - [Tabular Object Model Hierarchy](#tabular-object-model-hierarchy)
-
-___
-
-# Setup
-
-## Instructions
-### [Optional: Guided Video]()
-
-### Power BI Desktop
-1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+- [Setup](#setup)
 
 ___
 
@@ -51,3 +41,27 @@ From a logical perspective, all tabular objects form a tree, the root of which i
 **Important Note:** The underlying **model.bim** file can now be incorporated into your CI/CD pipelines for deployments with Azure DevOps. To deploy changes directly to existing datasets published in the Power BI service, enabling the XMLA read/write endpoint in the capacity settings and Power BI Premium is required. Once changes have been made to a dataset published in the service using the XMLA end point, a PBIX file will no longer be able to be downloaded.
 
 [Learn More About Data Modeling and Management Tools](https://docs.microsoft.com/en-us/power-bi/admin/service-premium-connect-tools#data-modeling-and-management-tools) 
+
+___
+
+# Setup
+
+## Instructions
+### [Optional: Guided Video]()
+
+### Power BI Desktop
+1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+2. Open ALM Toolkit, select Options and enable the following options:
+![Options](./images/Options.png)
+
+Learn More:
+- [Include cultures](https://docs.microsoft.com/en-us/analysis-services/tabular-models/translations-in-tabular-models-analysis-services?view=asallproducts-allversions)
+- [Processing Options](https://docs.microsoft.com/en-us/analysis-services/multidimensional-models/processing-options-and-settings-analysis-services?view=asallproducts-allversions#processing-options)
+
+| Mode | Applies to | Description |
+
+
+
+
+
+https://docs.microsoft.com/en-us/analysis-services/multidimensional-models/processing-options-and-settings-analysis-services?view=asallproducts-allversions#processing-options
