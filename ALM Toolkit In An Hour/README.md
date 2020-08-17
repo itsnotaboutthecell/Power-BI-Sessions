@@ -76,8 +76,10 @@ Target
 
 ### Supported Connections:
 - Dataset
-    - Analysis Services Database (SSAS/AAS)
-    - Power BI Premium Dataset (via XMLA)
+    - Analysis Services Database
+        - SQL Server Analysis Services (SSAS)
+        - Azure Analysis Services (AAS)
+        - [Power BI Premium Dataset (via XMLA)](https://docs.microsoft.com/en-us/power-bi/admin/service-premium-connect-tools)
 - Power BI Desktop (PBIX)
 - File (Metdata Only)
     - Power BI Template File (PBIT)
@@ -96,19 +98,20 @@ model.
 1. Within the Connections dialog box confirm the following and press **OK** when complete.
     1. **Source** is the Power BI Desktop file Sales Demo that is currently open.
     2. Within the **Target** select **File** and navigate to the downloaded **Sales Demo.pbit**
-2. Navigate to the **Home** tab and select the **Select Actions** and the **Hide Skip Objects with Same Definition** option.
 
 ### Power BI Desktop
-1. Navigate to File,  the Sales Demo (PBIX) file, navigate to the External Tools ribbon in Power BI Desktop and select ALM Toolkit.
-2. Disable Auto time intelligence
+1. Navigate to File, Options and Settings, Options and the **CURRENT FILE** sections **Data Load** properties and disable **Auto date/time**.
 
 ### ALM Toolkit
-1. Press Compare
+1. Press Compare and confirm the following remain unchanged.
     1. **Source** is the Power BI Desktop file Sales Demo that is currently open.
     2. Within the **Target** select **File** and navigate to the downloaded **Sales Demo.pbit**
 2. Navigate to the **Home** tab and select the **Select Actions** and the **Hide Skip Objects with Same Definition** option.
+3. Select the row containing the Table object named **Calendar** to compare the differences.
 
 
+
+# Actions
 
 ### Available Actions
 Create
