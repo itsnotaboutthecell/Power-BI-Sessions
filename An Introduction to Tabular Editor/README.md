@@ -1,8 +1,12 @@
-# Tabular Editor In An Hour ![Tabular Editor](./Images/tabular_editor.png)
+# Tabular Editor 2 In An Hour ![Tabular Editor](./Images/tabular_editor.png)
 
 
 ### About:
 Tabular Editor provides an intuitive hierarchical view of every object in your Tabular Model metadata. Columns, Measures and Hierarchies are arranged in Display Folders by default. You can edit properties of one or more objects, by (multi)selecting them in the tree. A DAX Editor with syntax highlighting lets you easily edit the expressions of Measures, Calculated Columns and Calculated Tables.
+
+Tabular Editor 2 (TE2) is the original open source version. This is free to use and will continue to be supported. 
+Tabular Editor 3 (TE3) is the commercial product version. It has a 30 day trial afterwards a paid license is required. 
+This introduction covers TE2, but the material translates to TE3. 
 
 Website: https://tabulareditor.com/
 ___
