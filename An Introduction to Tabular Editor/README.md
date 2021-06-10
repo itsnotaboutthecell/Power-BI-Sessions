@@ -9,6 +9,7 @@ Tabular Editor 3 (TE3) is the commercial product version. It has a 30 day trial 
 This introduction covers TE2, but the material translates to TE3. 
 
 Website: https://tabulareditor.com/
+TE2: https://github.com/otykier/TabularEditor/releases
 ___
 
 **Follow Along:**
@@ -36,7 +37,7 @@ ___
 ### [Optional: Guided Video](https://www.youtube.com/watch?v=pFX20PPxXjs&list=PLKW7XPyNDgRCOiC69kZWfRQdOxcnQy2yA&index=2)
 
 ### Power BI Desktop
-1. Ensure the Power BI preview feature [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata) is enabled.
+1. Upgrade to the latest version of Power BI Desktop which supports [Store datasets using enhanced metadata format](https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-enhanced-dataset-metadata).
 
 ### Tabular Editor
 1. Navigate to the **File** menu and select **Preferences**
@@ -81,6 +82,7 @@ ___
 The best practices rules are a collection of community contributions for Tabular Model development. They let you define global or model-specific rules using a simple expression language. At any time, you can check whether objects in your model satisfy the rules.
 
 Website: https://github.com/TabularEditor/BestPracticeRules
+Michael Kovalsky (Microsoft) blog posts: https://powerbi.microsoft.com/en-us/blog/author/mikova/
 
 
 ### Objective: Import the Best Practice Rules collection and apply to the model.
